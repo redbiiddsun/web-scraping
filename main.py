@@ -36,7 +36,6 @@ def threadTask(lists):
 
 def threadDownload(lists):
     for i in range(0, len(lists)):
-        # print(i)
         downloadVideo('http://youtube.com/watch?v=' + lists[i])
 
 def executeThread(videoID_list):
@@ -50,11 +49,6 @@ def executeThread(videoID_list):
     for i in thread_list:
         i.join()
 
-    
-
-
-    
-    
 if __name__ =="__main__":
 
     while 1:
@@ -70,5 +64,9 @@ if __name__ =="__main__":
         videoID_list = list(threadTask(videoID))
 
         executeThread(videoID_list)
-        
+
+        print("--------------------------------------------------------------------------")
+        print("Error Report")
+        print(f"There are {len(error)} would you like to continue? ()")
+        print("--------------------------------------------------------------------------")
         print("--------------------------------------------------------------------------")
